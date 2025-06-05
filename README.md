@@ -33,7 +33,7 @@ Upon running the following folders will be created within the Main Folder
 conformations = each contains the autodock fitted ligand atomic spatial coordinates in pdbqt for an individual autodock run (to the corresponding space vector)
 logs = each contains the results of an individual autodock run (to the corresponding space vector)
 results = the aggregated extracted numerical results
-In the Main Folder the parameter files for each individual space vector will be created.
+In the Project Folder the parameter files for each individual space vector will be created.
 
 The algoritm requires:
 installed python (probably 3.12 or newer) with numpy and pandas packages
