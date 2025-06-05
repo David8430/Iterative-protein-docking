@@ -23,7 +23,7 @@ Credit: based on 2021 Oliver Powell https://github.com/Orpowell/autodock-vina-au
 
 structure for use:
 Main Folder
-|_iterative docking algorithm.py (can be elsewhere outside)
+|_iterative docking algorithm.py
 |_Project Folder
   |_receptor protein.pdbqt
   |_ligand.pdbqt
@@ -36,6 +36,7 @@ results = the aggregated extracted numerical results
 In the Main Folder the parameter files for each individual space vector will be created.
 
 The algoritm requires:
+installed python (probably 3.12 or newer) with numpy and pandas packages
 receptor protein template as pdbqt file
 fitted ligand as pdbqt file
 box size - the size of the space fragment that will be surveyed for binding (ideally cubic)
