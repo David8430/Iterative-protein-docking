@@ -2,32 +2,32 @@
 Credit: based on 2021 Oliver Powell https://github.com/Orpowell/autodock-vina-automator
   with changes to iterate over a range of spatial coordinates instead of multiple ligands; the space vector is shifted by half box size in one direction every iteration <br/>
         the creators of autodock vina <br/>
-<pre>        ################################################################# <br/>
-        # If you used AutoDock Vina in your work, please cite:          # <br/>
-        #                                                               # <br/>
-        # J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  # <br/>
-        # AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      # <br/>
-        # Field, and Python Bindings, J. Chem. Inf. Model. (2021)       # <br/>
-        # DOI 10.1021/acs.jcim.1c00203                                  # <br/>
-        #                                                               # <br/>
-        # O. Trott, A. J. Olson,                                        # <br/>
-        # AutoDock Vina: improving the speed and accuracy of docking    # <br/>
-        # with a new scoring function, efficient optimization and       # <br/>
-        # multithreading, J. Comp. Chem. (2010)                         # <br/>
-        # DOI 10.1002/jcc.21334                                         # <br/>
-        #                                                               # <br/>
-        # Please see https://github.com/ccsb-scripps/AutoDock-Vina for  # <br/>
-        # more information.                                             # <br/>
-        ################################################################# <br/></pre>
-        reduce is from Word, et. al. (1999) J. Mol. Biol. 285, 1735-1747. <br/>
+<pre>        ################################################################# 
+        # If you used AutoDock Vina in your work, please cite:          
+        #                                                               #
+        # J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  #
+        # AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      #
+        # Field, and Python Bindings, J. Chem. Inf. Model. (2021)       #
+        # DOI 10.1021/acs.jcim.1c00203                                  #
+        #                                                               #
+        # O. Trott, A. J. Olson,                                        #
+        # AutoDock Vina: improving the speed and accuracy of docking    #
+        # with a new scoring function, efficient optimization and       #
+        # multithreading, J. Comp. Chem. (2010)                         #
+        # DOI 10.1002/jcc.21334                                         #
+        #                                                               #
+        # Please see https://github.com/ccsb-scripps/AutoDock-Vina for  #
+        # more information.                                             #
+        #################################################################</pre>
+        reduce is from Word, et. al. (1999) J. Mol. Biol. 285, 1735-1747.
 
-<pre>structure for use: <br/>
-Main Folder <br/>
-|_iterative docking algorithm.py <br/>
-|_Project Folder <br/>
-  |_receptor protein.pdbqt <br/>
-  |_ligand.pdbqt <br/>
-  |_vina_1.2.5_win.exe <br/></pre>
+<pre>structure for use:
+Main Folder
+|_iterative docking algorithm.py
+|_Project Folder
+  |_receptor protein.pdbqt
+  |_ligand.pdbqt
+  |_vina_1.2.5_win.exe</pre>
 
 Upon running the following folders will be created within the Main Folder <br/>
 conformations = each contains the autodock fitted ligand atomic spatial coordinates in pdbqt for an individual autodock run (to the corresponding space vector) <br/>
