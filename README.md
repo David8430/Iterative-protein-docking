@@ -2,7 +2,7 @@
 Credit: based on 2021 Oliver Powell https://github.com/Orpowell/autodock-vina-automator
   with changes to iterate over a range of spatial coordinates instead of multiple ligands; the space vector is shifted by half box size in one direction every iteration <br/>
         the creators of autodock vina <br/>
-        ################################################################# <br/>
+<pre>        ################################################################# <br/>
         # If you used AutoDock Vina in your work, please cite:          # <br/>
         #                                                               # <br/>
         # J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  # <br/>
@@ -18,16 +18,16 @@ Credit: based on 2021 Oliver Powell https://github.com/Orpowell/autodock-vina-au
         #                                                               # <br/>
         # Please see https://github.com/ccsb-scripps/AutoDock-Vina for  # <br/>
         # more information.                                             # <br/>
-        ################################################################# <br/>
+        ################################################################# <br/></pre>
         reduce is from Word, et. al. (1999) J. Mol. Biol. 285, 1735-1747. <br/>
 
-structure for use: <br/>
+<pre>structure for use: <br/>
 Main Folder <br/>
 |_iterative docking algorithm.py <br/>
 |_Project Folder <br/>
   |_receptor protein.pdbqt <br/>
   |_ligand.pdbqt <br/>
-  |_vina_1.2.5_win.exe <br/>
+  |_vina_1.2.5_win.exe <br/></pre>
 
 Upon running the following folders will be created within the Main Folder <br/>
 conformations = each contains the autodock fitted ligand atomic spatial coordinates in pdbqt for an individual autodock run (to the corresponding space vector) <br/>
