@@ -22,18 +22,20 @@ Credit: based on 2021 Oliver Powell https://github.com/Orpowell/autodock-vina-au
         reduce is from Word, et. al. (1999) J. Mol. Biol. 285, 1735-1747.
 
 <pre>structure for use:
-Main Folder
-|_iterative docking algorithm.py
-|_Project Folder
+Project Folder
   |_receptor protein.pdbqt
-  |_ligand.pdbqt
-  |_vina_1.2.5_win.exe</pre>
+  |_vina_1.2.5_win.exe
+  |_Ligand Folder
+    |_ligand1.pdbqt
+    |_ligand2.pdbqt
+    ...</pre>
 
-Upon running the following folders will be created within the Main Folder <br/>
+Upon running the following folders will be created within a folder with the ligand's name. <br/>
 conformations = each contains the autodock fitted ligand atomic spatial coordinates in pdbqt for an individual autodock run (to the corresponding space vector) <br/>
 logs = each contains the results of an individual autodock run (to the corresponding space vector) <br/>
 results = the aggregated extracted numerical results <br/>
-In the Project Folder the parameter files for each individual space vector will be created.
+The parameter files for each individual space vector will also be created there.
+Folders can have arbitrary names (not tested behaviour with space).
 
 The algoritm requires: <br/>
 installed python (probably 3.12 or newer) with numpy and pandas packages <br/>
