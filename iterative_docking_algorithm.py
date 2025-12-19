@@ -195,7 +195,7 @@ def get_binding_data_csv(ligand):
         with open(file, 'r') as log:
             try:
                 logs = log.readlines()  # convert each line into a string
-                for i in range(38, 47, 1): #38-47 in the case of exhaustiveness 8 producing 9 lines, adjust accordingly
+                for i in range(-9, 0, 1): #last 9 lines; in the case of exhaustiveness 8 producing 9 lines, adjust accordingly
                     raw_data = logs[i].split()  # split values into list
                     map_data = map(float, raw_data)  # convert strings to floats
                     list_data = list(map_data)  # convert map to list
