@@ -268,6 +268,7 @@ def get_covering_matrix(minim, maxim, two_step):
 
 # Run Script
 if __name__ == '__main__':
+    exe_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vina_1.2.5_win.exe')
     working_directory = get_working_directory()  # Ask for working directory containing ligand and receptor
     os.chdir(working_directory)  # change directory to input
     receptor = get_receptor()  # Receive file name of receptor
@@ -307,7 +308,7 @@ if __name__ == '__main__':
             log_path = os.path.join(ligand_name, f'logs-{seed_num}', f'{iteration_num}-log-{seed_num}.txt')
             with open(log_path, 'w') as log_file:
                 result = subprocess.run(
-                    ['vina_1.2.5_win.exe', '--config', config_input],
+                    [exe_path, '--config', config_input],
                     stdout = log_file,
                     stderr = log_file,
                     text = True
