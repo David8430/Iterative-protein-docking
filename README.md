@@ -22,9 +22,11 @@ Credit: based on 2021 Oliver Powell https://github.com/Orpowell/autodock-vina-au
         reduce is from Word, et. al. (1999) J. Mol. Biol. 285, 1735-1747.
 
 <pre>structure for use:
+Script Folder
+  |_iterative_docking_algorithm.py
+  |_vina_1.2.5_win.exe
 Project Folder
   |_receptor protein.pdbqt
-  |_vina_1.2.5_win.exe
   |_Ligand Folder
     |_ligand1.pdbqt
     |_ligand2.pdbqt
