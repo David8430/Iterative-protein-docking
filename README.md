@@ -32,6 +32,7 @@ Project Folder
     |_ligand2.pdbqt
     ...</pre>
 
+The script was made for vina v1.2.5, but can be updated for 1.2.7 by changing the subprocessed exe's name in the code. <br/
 Upon running the following folders will be created within a folder with the ligand's name. <br/>
 conformations = each contains the autodock fitted ligand atomic spatial coordinates in pdbqt for an individual autodock run (to the corresponding space vector) <br/>
 logs = each contains the results of an individual autodock run (to the corresponding space vector) <br/>
