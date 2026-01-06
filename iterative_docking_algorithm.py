@@ -79,27 +79,18 @@ def get_flex_receptor():
 
 # Collect coordinates for log files
 def get_coordinates():
-    # Function to determine if a value is a float, returns True or False accordingly
-    def is_float(value):
-        try:
-            float(value)
-            return True
-        except ValueError:
-            return False
-
     while True:
         min_coordinates_input = input('Min limit co-ordinates (x y z): ')  # Receive coordinates in format x y z
         max_coordinates_input = input('Max limit co-ordinates (x y z): ')  # Receive coordinates in format x y z
-        min_coord = min_coordinates_input.split()  # Generate list of lowest coordinate point
-        max_coord = max_coordinates_input.split()  # Generate list of highest coordinate point
-        all_coord = min_coord + max_coord
+        try:
+            min_coord = list(map(float, min_coordinates_input.split()))  # Generate list of lowest coordinate point
+            max_coord = list(map(float, max_coordinates_input.split()))  # Generate list of highest coordinate point
+        except ValueError:
+            print('Error: not all coordinates are numbers')
 
         # Check all 3 coordinates have been provided
         if len(min_coord) != 3 or len(max_coord) != 3:
             print('Error: Please enter exactly 3 coordinates for both min and max separated by a space')
-        # Check all coordinates are numeric values
-        elif not all(map(is_float, all_coord)):
-            print('Error: not all coordinates are numbers')
         # check if values are min and max
         elif not all(x <= y for x, y in zip(min_coord, max_coord)):
             print('At least one minimum coordinate exceeds the respective maximum coordinate.')
@@ -111,49 +102,40 @@ def get_coordinates():
 # Collect box size parameters for log files
 def get_box_size():
     # Check if a given value is a positive integer
-    def check_pos(value):
-        n = int(value)
-        if n > 0:
-            return True
-        else:
-            return False
-
     while True:
         box_size_input = input('Box size (x y z) integers: ')
-        box = box_size_input.split()
-
+        
         # Check all coordinates are integers
         try:
-            all(map(int, box))
+            box = list(map(int, box_size_input.split()))
             # Check all 3 coordinates have been provided
             if len(box) != 3:
                 print('Error: Please enter exactly 3 coordinates separated by a space.')
             # Check all integers are positive
-            elif not all([check_pos(n) for n in box]):
+            elif not all(n > 0 for n in box):
                 print('Error: Box values must be positive integers.')
             # accept and return input if all values are present and correct
             else:
                 print('Box parameters accepted...')
                 return box
         except ValueError:
-            print('Error: Box values must be positive integers')
+            print('Error: Box values must be integers')
 
 # Collect seeds if any for log files not tested for multiple
 def get_seeds():
     while True:
         seed = input('Seed(s) (optional, default is 0) [a b c ...] integer: ')  # Receive seeds in format 1 2 3
-        seed_list_input = seed.split()  # separate seeds into list
 
         # Check seeds are integers (can be positive or negative)
         try:
-            seed_map = map(int, seed_list_input)  # generate a list of seeds as integers
+            seed_map = list(map(int, seed.split()))  # generate a list of seeds as integers
             # If no input give - default seed is 0
-            if len(seed_list_input) < 1:
+            if len(seed_map) < 1:
                 return [0]
             # accept and return input if all values are present and correct
             else:
                 print('Seed(s) accepted...')
-                return list(seed_map)
+                return seed_map
         # If not integer value is received ask for input again
         except ValueError:
             print('Error: seed(s) must be an integer')
@@ -237,19 +219,19 @@ def get_binding_data_csv(ligand):
     print(f'Log data retrieved and saved as {path}')  # Tell user location of CSV file
 
 def get_covering_matrix(minim, maxim, two_step):
-    x_min = float(minim[0]) # convert string to float for math operators
-    x_max = float(maxim[0])
-    y_min = float(minim[1])
-    y_max = float(maxim[1])
-    z_min = float(minim[2])
-    z_max = float(maxim[2])
+    x_min = minim[0]
+    x_max = maxim[0]
+    y_min = minim[1]
+    y_max = maxim[1]
+    z_min = minim[2]
+    z_max = maxim[2]
 
     x_range = x_max - x_min # get the max range in each dimension
     y_range = y_max - y_min
     z_range = z_max - z_min
-    x_step = float(two_step[0]) / 2 # get the step size that is equal to half box size in each dimension
-    y_step = float(two_step[1]) / 2
-    z_step = float(two_step[2]) / 2
+    x_step = two_step[0] / 2 # get the step size that is equal to half box size in each dimension
+    y_step = two_step[1] / 2
+    z_step = two_step[2] / 2
     x_counter = ceil(x_range / x_step) + 1 # calculate how many iteration is required to exhaustively cover the range
     y_counter = ceil(y_range / y_step) + 1
     z_counter = ceil(z_range / z_step) + 1
