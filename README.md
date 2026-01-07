@@ -58,6 +58,7 @@ Receptor file: <br/>
 
 Ligand file: <br/>
 1. Get a 3D coordinate file for the molecule usully .sdf format. Can be from pubchem or other databases or de novo from openbabel or other cheminformatic software <br/>
+Added "3D coordinate generation.py" that can be run in a rdkit anaconda environment to generate a 3D sdf file from SMILES, 2D .sdf and InChI inputs. The stereoisomer needs to be precisely defined.<br/>
 2. Ideally optimise the structure so that it reflects a realistic conformation. (especially rigid rings and other similar structures) <br/>
 3. Convert sdf to pdbqt file. Openbabel is a good software for it. https://openbabel.org/index.html <br/>
     add hydrogens make explicit <br/>
